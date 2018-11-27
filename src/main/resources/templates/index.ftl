@@ -24,7 +24,12 @@
         </#list>
     </table>
     <input type="submit" value="DOIT" class="btn btn-outline-secondary margin-10">
-    <select id="format-select" class="btn btn-outline-secondary margin-10">
+    <select id="format-select-height" class="btn btn-outline-secondary margin-10">
+        <#list 1..10 as x>
+            <option value="${x}">${x}</option>
+        </#list>
+    </select>
+    <select id="format-select-width" class="btn btn-outline-secondary margin-10">
         <#list 1..10 as x>
             <option value="${x}">${x}</option>
         </#list>

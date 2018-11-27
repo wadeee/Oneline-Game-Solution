@@ -16,33 +16,33 @@ $(function () {
         refreshBlock($(this));
     })
 
-    $("#format-select").change(function () {
-        var length = parseInt($(this).val());
-        for (var i = 1; i <= length; i++) {
-            for (var j = 1; j <= length; j++) {
-                $("#status[" + i + "][" + j + "]").val(1);
-                refreshBlock($("#status[" + i + "][" + j + "]"));
-            }
-        }
-    })
+    $("#format-select-height").change(blocksInit);
+
+    $("#format-select-width").change(blocksInit);
 })
 
-clickTimeout = {
-    _timeout: null,
-    set: function (fn) {
-        var that = this;
-        that.clear();
-        that._timeout = window.setTimeout(fn, 300);
-    },
-    clear: function () {
-        var that = this;
-        if (that._timeout) {
-            window.clearTimeout(that._timeout);
+blocksInit = function () {
+    for (var i = 1; i <= 10; i++) {
+        for (var j = 1; j <= 10; j++) {
+            $("[name='status[" + i + "][" + j + "]']").val(0);
+            console.log("[name='status[" + i + "][" + j + "]']");
+            refreshBlock($("[name='status[" + i + "][" + j + "]']").parent());
         }
     }
-};
+    var height = parseInt($("#format-select-height").val());
+    var width = parseInt($("#format-select-width").val());
+    console.log(height);
+    console.log(width);
+    for (var i = 1; i <= height; i++) {
+        for (var j = 1; j <= width; j++) {
+            $("[name='status[" + i + "][" + j + "]']").val(1);
+            console.log("[name='status[" + i + "][" + j + "]']");
+            refreshBlock($("[name='status[" + i + "][" + j + "]']").parent());
+        }
+    }
+}
 
-function refreshBlock($mapBlock) {
+refreshBlock = function ($mapBlock) {
     $mapBlock.removeClass("map-block-0");
     $mapBlock.removeClass("map-block-1");
     $mapBlock.removeClass("map-block-2");
