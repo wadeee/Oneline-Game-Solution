@@ -7,6 +7,7 @@ buildscript {
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath 'com.google.cloud.tools:appengine-gradle-plugin:1.1.1'
     }
 }
 
@@ -15,9 +16,13 @@ apply plugin: 'eclipse-wtp'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 apply plugin: 'war'
+apply plugin: 'com.google.cloud.tools.appengine'
 
-group = 'com.example'
-version = '0.0.1-SNAPSHOT'
+def defaultEncoding = 'UTF-8'
+[compileJava, compileTestJava]*.options*.encoding = defaultEncoding
+
+group = 'linkin.park'
+version = '1.0.0'
 sourceCompatibility = 1.8
 
 repositories {
@@ -35,4 +40,7 @@ dependencies {
     compileOnly('org.projectlombok:lombok')
     providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')
     testImplementation('org.springframework.boot:spring-boot-starter-test')
+    compile 'com.google.appengine:appengine:+'
+    compile 'com.google.cloud:google-cloud-storage:1.24.1'
+    compile group: 'org.springframework', name: 'spring-web', version: '5.0.4.RELEASE'
 }
