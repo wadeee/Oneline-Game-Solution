@@ -8,7 +8,6 @@ MAINTAINER wade wadechen@outlook.com
 
 RUN git clone https://github.com/wadeee/game-solution.git\
   && cd game-solution\
-  && git checkout pfu\
   && gradle build
 
 CMD cd game-solution \
