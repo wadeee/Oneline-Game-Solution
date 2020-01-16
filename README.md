@@ -35,6 +35,25 @@
     
     剩下的不可走的区域就是禁用格子
     
+## 使用方法
+
++ Docker已经安装好并启动
+
++ 进入Dockerfile目录，构建image并查看镜像是否生成
+
+  ```bash
+  docker build -t onelinegamesolution .
+  docker images
+  ```
+
++ 生成并运行container映射8080端口到3000端口（3000端口可以任意更改）
+
+  ```bash
+  docker run -p 3000:8080 --name=onelinegamesolutioncontainer onelinegamesolution
+  ```
+
++ 打开[localhost:3000]
+
 
 ## 算法思路
 
