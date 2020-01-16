@@ -1,15 +1,19 @@
-# This dockerfile uses the ubuntu image
+# This dockerfile uses the gradle image
 # VERSION 1
 # Author: wade
 
-FROM ubuntu
+FROM gradle
 
 MAINTAINER wade wadechen@outlook.com
 
 RUN export http_proxy="http://basechinissei:9457580000@oym.proxy.nic.fujitsu.com:8080" \
   && export https_proxy="http://basechinissei:9457580000@oym.proxy.nic.fujitsu.com:8080" \
-  && apt-get update \
-  && echo 'Y' |apt-get install python \
-  && echo "print(\"SUCCESS\")" > temp.py \
-  && python temp.py
+  && git config --global http.proxy http://basechinissei:9457580000@oym.proxy.nic.fujitsu.com:8080\
+  && git config --global https.proxy http://basechinissei:9457580000@oym.proxy.nic.fujitsu.com:8080\
+  && git clone https://github.com/wadeee/game-solution.git\
+  && cd game-solution\
+  && git checkout pfu\
+  && gradle build
 
+CMD cd game-solution \
+  && gradle bootRun
