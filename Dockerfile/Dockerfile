@@ -6,9 +6,9 @@ FROM gradle
 
 MAINTAINER wade wadechen@outlook.com
 
-RUN git clone https://github.com/wadeee/game-solution.git\
-  && cd game-solution\
+RUN git clone https://github.com/wadeee/Oneline-Game-Solution.git\
+  && cd Oneline-Game-Solution\
   && gradle build
 
-CMD cd game-solution \
+CMD cd Oneline-Game-Solution \
   && gradle bootRun
