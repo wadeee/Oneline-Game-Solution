@@ -32,7 +32,7 @@ repositories {
 
 jar {
     manifest {
-        attributes 'Main-Class': 'com.example.gamesolve.GameSolutionApplication'
+        attributes 'Main-Class': 'GameSolutionApplication'
     }
     from {
         configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
@@ -46,7 +46,6 @@ configurations {
 dependencies {
     implementation('org.springframework.boot:spring-boot-starter-freemarker')
     implementation('org.springframework.boot:spring-boot-starter-web')
-    implementation 'org.springframework.boot:spring-boot-starter'
     runtimeOnly('org.springframework.boot:spring-boot-devtools')
     compileOnly('org.projectlombok:lombok')
     providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')
