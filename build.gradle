@@ -23,7 +23,7 @@ apply plugin: 'application'
 
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
-mainClassName = 'GameSolutionApplication'
+mainClassName = 'com.example.gamesolve.GameSolutionApplication'
 sourceCompatibility = 1.8
 
 repositories {
