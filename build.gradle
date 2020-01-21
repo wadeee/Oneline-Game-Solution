@@ -32,7 +32,7 @@ repositories {
 
 jar {
     manifest {
-        attributes 'Main-Class': 'GameSolutionApplication'
+        attributes 'Main-Class': 'com.example.gamesolve.GameSolutionApplication'
     }
     from {
         configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
