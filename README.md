@@ -52,7 +52,13 @@
   docker run -p 3000:8080 --name=onelinegamesolutioncontainer onelinegamesolution
   ```
 
-+ 打开[localhost:3000]
++ 打开[http://localhost:3000/]
+
+    - 没有浏览器的情况下可以用curl打开查看是否正常运行
+  
+        ```shell script
+        curl http://localhost:3000/
+        ```
 
 
 ## 算法思路
