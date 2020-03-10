@@ -35,30 +35,36 @@
     
     剩下的不可走的区域就是禁用格子
     
-## 使用方法
+## Docker下运行
 
 + Docker已经安装好并启动
 
-+ 进入Dockerfile目录，构建image并查看镜像是否生成
++ 进入项目目录，构建image并查看镜像是否生成
 
   ```bash
-  docker build -t onelinegamesolution .
+  docker build -t onelinegamesolution ./Dockerfile
   docker images
   ```
 
-+ 生成并运行container映射8080端口到3000端口（3000端口可以任意更改）
++ 生成并运行container映射3001端口到3001端口（3001端口可以任意更改）
 
   ```bash
-  docker run -p 3000:8080 --name=onelinegamesolutioncontainer onelinegamesolution
+  docker run -itd -p 8080:3001 --name=onelinegamesolutioncontainer onelinegamesolution
   ```
 
-+ 打开[http://localhost:3000/]
++ 打开[http://localhost:8080/]
 
     - 没有浏览器的情况下可以用curl打开查看是否正常运行
   
         ```shell script
-        curl http://localhost:3000/
+        curl http://localhost:8080/
         ```
+
++ 使用完后删除image和container
+
+    ```bash
+    docker stop onelinegamesolutioncontainer && docker rm onelinegamesolutioncontainer && docker image rm onelinegamesolutioncontainer
+    ```
 
 
 ## 算法思路
