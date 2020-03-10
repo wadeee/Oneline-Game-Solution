@@ -63,7 +63,7 @@
 + 使用完后删除image和container
 
     ```bash
-    docker stop onelinegamesolutioncontainer && docker rm onelinegamesolutioncontainer && docker image rm onelinegamesolutioncontainer
+    docker stop onelinegamesolutioncontainer && docker rm onelinegamesolutioncontainer && docker image rm onelinegamesolution
     ```
 
 
