@@ -22,7 +22,7 @@ apply plugin: "io.freefair.lombok"
 apply plugin: 'application'
 
 group = 'com.example'
-version = '0.0.1-SNAPSHOT'
+version = '1.0'
 mainClassName = 'com.example.gamesolve.GameSolutionApplication'
 sourceCompatibility = 1.8
 
