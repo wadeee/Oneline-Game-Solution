@@ -21,7 +21,7 @@ public class GameSolutionController {
 
     @GetMapping
     public String indexGet(Model model) {
-
+        System.out.println("wtf");
         List<List<BreakWall>> breakWallMap = newBreakWallMap();
 
         model.addAttribute("breakWallMap", breakWallMap);
